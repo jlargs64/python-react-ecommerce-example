@@ -9,3 +9,8 @@ Base.metadata.create_all(bind=engine)
 # Init app and routes
 app = FastAPI()
 app.include_router(users_router)
+
+
+@app.get("/health")
+def health_check():
+    return "OK"

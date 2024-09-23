@@ -1,5 +1,5 @@
 # First Stage: Build dependencies
-FROM python:3.12.5-slim-bookworm as builder
+FROM python:3.12.5-slim-bookworm AS builder
 
 # Set environment variables
 ENV PYTHONUNBUFFERED=1 \
@@ -47,4 +47,4 @@ ENV PATH="/root/.local/bin:$PATH"
 EXPOSE 8000
 
 # Run the FastAPI application using Uvicorn
-CMD ["poetry", "run", "uvicorn", "backend.app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["poetry", "run", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
